@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta  charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial- scale=1.0">
+<title>Greenify - Catalog</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header>
+<nav class="navbar">
+<a href="index.html" class="brand">Flowers</a>
+<ul class="nav-links">
+<li><a href="catalog.html">Catalog</a></li>
+<li><a href="cart.html">Cart</a></li>
+ 
+<li><a href="login.html">Login</a></li>
+</ul>
+</nav>
+</header>
+
+<!-- Catalog Section -->
+<section  class="product-list">
+<div  class="product-card">
+<img src="https://www.thespruce.com/thmb/c3znkzZgMeuvzBy4wH13jVllfUo=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/plants-with-big-flowers-4138211-hero-b10becb169064cc4b3c7967adc1b22e1.jpg" alt="Plant Image" class="product-image">
+<h3>Plant 1</h3>
+<p>$15.00</p>
+<button class="add-to-cart">Add to Cart</button>
+</div>
+
+<div  class="product-card">
+<img src="https://seed2plant.in/cdn/shop/files/927_Red_Cascade_mug_x700_96ec6378-0a21-4634-b9b7-ff7e9c1681a7.webp?v=1687621910" alt="Plant Image" class="product-image">
+<h3>Plant 2</h3>
+<p>$20.00</p>
+<button class="add-to-cart">Add to Cart</button>
+</div>
+
+<div  class="product-card">
+<img src="https://www.gardendesign.com/pictures/images/675x529Max/site_3/dianthus-pink-and-white-flower-pinks-pixabay_11881.jpg" alt="Plant Image" class="product-image">
+<h3>Plant 3</h3>
+<p>$30.00</p>
+<button class="add-to-cart">Add to Cart</button>
+</div>
+
+<div  class="product-card">
+<img src="https://hgic.clemson.edu/wp-content/uploads/2018/02/the-pink-double-flowering-variety-of-kalanchoe-k.jpeg" alt="Plant Image" class="product-image">
+<h3>Plant 4</h3>
+<p>$25.00</p>
+<button class="add-to-cart">Add to Cart</button>
+</div>
+
+<div  class="product-card">
+<img src="https://hgic.clemson.edu/wp-content/uploads/2018/02/the-pink-double-flowering-variety-of-kalanchoe-k.jpeg" alt="Plant Image" class="product-image">
+<h3>Plant 5</h3>
+<p>$25.00</p>
+<button class="add-to-cart">Add to Cart</button>
+</div>
+<div  class="product-card">
+<img src="https://www.thespruce.com/thmb/c3znkzZgMeuvzBy4wH13jVllfUo=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/plants-with-big-flowers-4138211-hero-b10becb169064cc4b3c7967adc1b22e1.jpg" alt="Plant Image" class="product-image">
+<h3>Plant 6</h3>
+<p>$15.00</p>
+<button class="add-to-cart">Add to Cart</button>
+</div>
+
+<div  class="product-card">
+<img src="https://www.gardendesign.com/pictures/images/675x529Max/site_3/dianthus-pink-and-white-flower-pinks-pixabay_11881.jpg" alt="Plant Image" class="product-image">
+<h3>Plant 7</h3>
+<p>$30.00</p>
+<button class="add-to-cart">Add to Cart</button>
+</div>
+
+<div  class="product-card">
+<img src="https://seed2plant.in/cdn/shop/files/927_Red_Cascade_mug_x700_96ec6378-0a21-4634-b9b7-ff7e9c1681a7.webp?v=1687621910" alt="Plant Image" class="product-image">
+<h3>Plant 8</h3>
+<p>$20.00</p>
+<button class="add-to-cart">Add to Cart</button>
+</div>
+
+</section>
+
+
+<footer class="footer">
+<p>&copy; 2025 Greenify - All rights reserved.</p>
+</footer>
+<script>
+const  addToCartButtons  =  document.querySelectorAll('.add-to-cart');
+
+addToCartButtons.forEach((button) => { button.addEventListener('click', () => { const productCard = button.parentElement;
+const productName = productCard.querySelector('h3').innerText;
+const productPrice = productCard.querySelector('p').innerText; const productImage = productCard.querySelector('img').src;
+
+const product = { name: productName,
+price: parseFloat(productPrice.replace('$', '')), image: productImage,
+quantity: 1
+};
+
+let cart = JSON.parse(localStorage.getItem('cart')) || [];
+ 
+// Check if product already exists in cart
+const existingProduct = cart.find(item => item.name === product.name); if (existingProduct) {
+existingProduct.quantity += 1;
+} else { cart.push(product);
+}
+localStorage.setItem('cart', JSON.stringify(cart)); alert(`${product.name} added to cart!`);
+});
+});
+</script>
+</body>
+</html>
