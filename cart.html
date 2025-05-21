@@ -22,9 +22,9 @@
 
 <!-- Cart Items Section -->
 <section  class="cart-items">
-<h2>Your Cart</h2>
+<h2>Pranati's Cart</h2>
 <div class="cart-item">
-<img src="https://media.istockphoto.com/id/1334790507/vector/3d-vector-floor- house-green-plant-palm-in-white-pot-isolated-on-white-illustration- icon.jpg?s=612x612&w=0&k=20&c=dGsYtSp66z31VWTzpwtlZJCDHvbfieGwDSa    rgtfyTxY=" alt="Plant Image" class="cart-item-image">
+<img src="https://www.thespruce.com/thmb/c3znkzZgMeuvzBy4wH13jVllfUo=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/plants-with-big-flowers-4138211-hero-b10becb169064cc4b3c7967adc1b22e1.jpg" alt="Plant Image" class="cart-item-image">
 <div  class="cart-item-details">
 <h3>Plant Name</h3>
 <p>Price: $20.00</p>
@@ -35,7 +35,7 @@
 </div>
 </div>
 <div class="cart-item">
-<img src="https://media.istockphoto.com/id/1334790507/vector/3d-vector-floor- house-green-plant-palm-in-white-pot-isolated-on-white-illustration- icon.jpg?s=612x612&w=0&k=20&c=dGsYtSp66z31VWTzpwtlZJCDHvbfieGwDSa    rgtfyTxY=" alt="Plant Image" class="cart-item-image">
+<img src="https://seed2plant.in/cdn/shop/files/927_Red_Cascade_mug_x700_96ec6378-0a21-4634-b9b7-ff7e9c1681a7.webp?v=1687621910" alt="Plant Image" class="cart-item-image">
 <div  class="cart-item-details">
  
 <h3>Plant Name</h3>
@@ -60,7 +60,7 @@
 <script>
     const cartItemsContainer = document.querySelector('.cart-items');
     const cartTotal = document.querySelector('.cart-total h3');
-    
+    const username = document.getElementById("username").value.trim();
     // Load cart from localStorage
     let cart = JSON.parse(localStorage.getItem('cart')) || [];
     
